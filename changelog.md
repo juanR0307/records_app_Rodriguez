@@ -17,10 +17,14 @@ Direction:
 2022-04-01  
 [/] Modify the field name id in user account  
 
+2022-4-6
+
+[/]added assets, created includes and setup databese
+
 ## These are the items you have to accomplished:  
-[x] Add assets to the project.  
-[x] Create includes directory; create navbar and sidebar.  
-[x] Setup database configuration.  
+[/] Add assets to the project.  
+[/] Create includes directory; create navbar and sidebar.  
+[/] Setup database configuration.  
 [x] Create page for List of office.
 [x] Create page for List of employees.  
 [x] Create page for List of transactions.  
