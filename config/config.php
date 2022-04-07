@@ -1,6 +1,6 @@
 <?php
 
-define('ROOT_URL', 'http://localhost/recordsapp/');
+define('ROOT_URL', 'http://localhost/records_app_Rodriguez/');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');

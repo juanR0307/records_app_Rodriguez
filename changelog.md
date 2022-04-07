@@ -19,16 +19,22 @@ Direction:
 
 2022-4-6
 
-[/]added assets, created includes and setup databese
+[/]added assets, created includes and setup database
+
+2022-4-7
+
+[/]created pages for office, employee and transaction. 
+
+[/]created page for adding office
 
 ## These are the items you have to accomplished:  
 [/] Add assets to the project.  
 [/] Create includes directory; create navbar and sidebar.  
 [/] Setup database configuration.  
-[x] Create page for List of office.
-[x] Create page for List of employees.  
-[x] Create page for List of transactions.  
-[x] Create page for adding office.  
+[/] Create page for List of office.
+[/] Create page for List of employees.  
+[/] Create page for List of transactions.  
+[/] Create page for adding office.  
 [x] Create page for adding employee.  
 [x] Create page for adding transactions.  
 [x] Applying pagination to list of office.  

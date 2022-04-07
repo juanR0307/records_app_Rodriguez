@@ -26,11 +26,11 @@
 
 
         //create query
-        $query = 'SELECT * FROM office ORDER BY name';
+        $query = 'SELECT transaction.datelog, transaction.documentcode, transaction.action, CONCAT(employee.lastname, "," , employee.firstname) as employee_fullname FROM recordapp_db.employee, recordapp_db.office, recordapp_db.transaction WHERE transaction.employee_id = employee.id and transaction.office_id = officeid';
         //get result
         $result = mysqli_query($conn, $query);
         //fetch data
-        $offices = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $transactions = mysqli_fetch_all($result, MYSQLI_ASSOC);
         //free result
         mysqli_free_result($result);
         //close the connection
@@ -59,40 +59,32 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card strpied-tabled-with-hover">
-
-                                <br/>
-                                <div class="col-md-12">
-                                    <a href="office-add.php">
-                                        <button type="submit" class="btn btn-info btn-fill pull-right">Add New office</button>
-                                    </a>
-                                </div>
-
                                 <div class="card-header ">
-                                    <h4 class="card-title">Striped Table with Hover</h4>
+                                    <h4 class="card-title">Transactions</h4>
                                     <p class="card-category">Here is a subtitle for this table</p>
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
                                         <thead>
-                                            <th>Name</th>
-                                            <th>Contact Number</th>
-                                            <th>email</th>
-                                            <th>Address</th>
-                                            <th>City</th>
-                                            <th>Country</th>
-                                            <th>Postal</th>
+                                            <th>Datelog</th>
+                                            <th>Document Code</th>
+                                            <th>Action</th>
+                                            <th>Office</th>
+                                            <th>Employee</th>
+                                            <th>Remarks</th>
+                                            
                                         </thead>
                                         <tbody>
 
-                                            <?php foreach($offices as $office) : ?>
+                                            <?php foreach($transactions as $transaction) : ?>
                                             <tr>
-                                                <td><?php echo $office['name']?></td>
-                                                <td><?php echo $office['contactnum']?></td>
-                                                <td><?php echo $office['email']?></td>
-                                                <td><?php echo $office['address']?></td>
-                                                <td><?php echo $office['city']?></td>
-                                                <td><?php echo $office['country']?></td>
-                                                <td><?php echo $office['postal']?></td>
+                                                <td><?php echo $transaction['datelog']?></td>
+                                                <td><?php echo $transaction['documentcode']?></td>
+                                                <td><?php echo $transaction['action']?></td>
+                                                <td><?php echo $transaction['office_name']?></td>
+                                                <td><?php echo $transaction['employee_fullname']?></td>
+                                                <td><?php echo $transaction['remarks']?></td>
+                                                
                                             </tr>
 
                                             <?php endforeach ?>
@@ -142,7 +134,7 @@
             </footer>
         </div>
     </div>
-    
+
 </body>
 <!--   Core JS Files   -->
 <script src="assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
